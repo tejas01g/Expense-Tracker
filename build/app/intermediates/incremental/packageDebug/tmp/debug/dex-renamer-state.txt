@@ -1,4 +1,4 @@
-#Thu Sep 05 22:50:09 IST 2024
+#Sat Sep 07 15:19:09 IST 2024
 base.0=E\:\\Expense Tracker\\expense_tracker\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=E\:\\Expense Tracker\\expense_tracker\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=E\:\\Expense Tracker\\expense_tracker\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

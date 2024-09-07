@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       home: const Homescreen(),
       routes: {
-        '/wallet': (context) => const Walletscreen(),
+        '/wallet': (context) => WalletScreen(),
         '/analysis': (context) => const Analysisscreen(),
         '/profile': (context) => const Profilescreen(),
       },
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/', page: () => const Welcomescreen()),
         GetPage(name: '/Login', page: () => const Login()),
         GetPage(name: '/Home', page: () => const Homescreen()),
-        
+
         // Add more pages here as needed
       ],
     );

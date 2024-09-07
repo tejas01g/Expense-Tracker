@@ -8,7 +8,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.sizeOf(context);
@@ -33,7 +33,7 @@ class Homescreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.align_horizontal_left_outlined),
             onPressed: () {
-              Get.to(const Walletscreen());
+              Get.to(WalletScreen());
             },
           ),
         ],

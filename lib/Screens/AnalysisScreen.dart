@@ -11,16 +11,15 @@ class _AnalysisscreenState extends State<Analysisscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 8, 20, 30),
-      appBar: AppBar(
-        title: const Text(
-          'Analysis',
-          style: TextStyle(color: Colors.white),
-        ),
         backgroundColor: const Color.fromARGB(255, 8, 20, 30),
-        automaticallyImplyLeading: true,
-        iconTheme: const IconThemeData(color: Colors.white),
-      ),
-    );
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 8, 20, 30),
+          title: const Text(
+            'Analysis',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ));
   }
 }
