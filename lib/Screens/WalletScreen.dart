@@ -1,117 +1,7 @@
-// // import 'package:expense_tracker/Controller/WalletController.dart';
-// // import 'package:expense_tracker/Widget/CardWidget.dart';
-// // import 'package:flutter/material.dart';
-// // import 'package:get/get.dart';
-
-// // class Walletscreen extends StatelessWidget {
-// //   final WalletController walletController = Get.put(WalletController());
-// //    Walletscreen({super.key});
-
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Scaffold(
-// //       appBar: AppBar(
-// //         backgroundColor: Colors.transparent,
-// //         elevation: 0,
-// //         title: const Text('Wallet'),
-// //         centerTitle: true,
-// //       ),
-// //       body: Column(
-// //         crossAxisAlignment: CrossAxisAlignment.center,
-// //         children: [
-// //           Expanded(
-// //             child: PageView.builder(
-// //               itemCount: WalletController.cards.length,
-// //               onPageChanged: (index) {
-// //                 WalletController.updateCurrentCard(index);
-// //               },
-// //               itemBuilder: (context, index) {
-// //                 return CardWidget(card: WalletController.cards[index]);
-// //               },
-// //             ),
-// //           ),
-// //           Obx(
-// //             () => Text(
-// //               '₹${WalletController.balance}',
-// //               style: TextStyle(fontSize: 24, color: Colors.white),
-// //             ),
-// //           ),
-// //           Text(
-// //             'Available Balance',
-// //             style: TextStyle(
-// //               color: Colors.white,
-// //             ),
-// //           ),
-// //           SizedBox(height: 16),
-// //         ],
-// //       ),
-// //     );
-// //   }
-// // }
-
-// import 'dart:ui';
-
-// import 'package:expense_tracker/Controller/WalletController.dart';
-// import 'package:expense_tracker/Widget/CreditCardWidget.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:get/get_core/src/get_main.dart';
-
-// class Walletscreen extends StatelessWidget {
-//   final WalletController walletController = Get.put(WalletController());
-
-//   Walletscreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: Colors.transparent,
-//         elevation: 0,
-//         title: const Text('Wallet'),
-//         centerTitle: true,
-//       ),
-//       body: Column(
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         children: [
-//           Expanded(
-//             child: PageView.builder(
-//               itemCount: walletController.cards.length, // Access through instance
-//               onPageChanged: (index) {
-//                 walletController.updateCurrentCard(index);
-//               },
-//               itemBuilder: (context, index) {
-//                 return CardWidget(card: walletController.cards[index]); // Access through instance
-//               },
-//             ),
-//           ),
-//           Obx(
-//             () => Text(
-//               '₹${walletController.balance}', // Access through instance
-//               style: TextStyle(fontSize: 24, color: Colors.white),
-//             ),
-//           ),
-//           Text(
-//             'Available Balance',
-//             style: TextStyle(
-//               color: Colors.white,
-//             ),
-//           ),
-//           SizedBox(height: 16),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-// wallet_screen.dart
-
 import 'package:expense_tracker/Controller/WalletController.dart';
 import 'package:expense_tracker/Widget/CreditCardWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'wallet_controller.dart';
-import 'credit_card_widget.dart';
 
 class WalletScreen extends StatelessWidget {
   final WalletController walletController = Get.put(WalletController());
@@ -119,11 +9,17 @@ class WalletScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 6, 16, 22),
+      backgroundColor: const Color.fromARGB(255, 2, 30, 62).withOpacity(0.89),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 6, 16, 22),
+        backgroundColor: const Color.fromARGB(255, 2, 30, 62).withOpacity(0.89),
         elevation: 0,
-        title: const Text('Wallet'),
+        iconTheme: const IconThemeData(
+          color: Colors.white, //change your icon theme
+        ),
+        title: const Text(
+          'Wallet',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
       ),
       body: Padding(

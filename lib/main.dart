@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: const Homescreen(),
+      home: const MainScreen(),
       routes: {
         '/wallet': (context) => WalletScreen(),
         '/analysis': (context) => const Analysisscreen(),

@@ -1,10 +1,68 @@
 import 'package:expense_tracker/Controller/BalanceController.dart';
 import 'package:expense_tracker/Controller/HomeController.dart';
 import 'package:expense_tracker/Controller/TransactionController.dart';
+import 'package:expense_tracker/Screens/AnalysisScreen.dart';
+import 'package:expense_tracker/Screens/ProfileScreen.dart';
 import 'package:expense_tracker/Screens/WalletScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Initialize the HomeController
+    final HomeController controller = Get.put(HomeController());
+
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 2, 30, 62).withOpacity(0.89),
+      body: Obx(() {
+        return IndexedStack(
+          index: controller.selectedIndex.value,
+          children: [
+            const Homescreen(), // Home Page
+            WalletScreen(), // Wallet Page
+            const Analysisscreen(), // Analysis Page
+            const Profilescreen(), // Profile Page
+          ],
+        );
+      }),
+      bottomNavigationBar: Obx(() {
+        return BottomNavigationBar(
+          backgroundColor: const Color.fromARGB(255, 6, 16, 22),
+          type: BottomNavigationBarType.fixed,
+          currentIndex: controller.selectedIndex.value,
+          selectedItemColor: const Color.fromARGB(255, 219, 158, 4),
+          unselectedItemColor: Colors.white,
+          onTap: (index) {
+            // Update the selectedIndex in the controller to switch tabs
+            controller.changeIndex(index);
+          },
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet),
+              label: 'Wallet',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.analytics),
+              label: 'Analysis',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+        );
+      }),
+    );
+  }
+}
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -18,9 +76,9 @@ class Homescreen extends StatelessWidget {
     final BalanceController balanceController = Get.put(BalanceController());
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 8, 20, 30),
+      backgroundColor: const Color.fromARGB(255, 2, 30, 62).withOpacity(0.89),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 8, 20, 30),
+        backgroundColor: const Color.fromARGB(255, 2, 30, 62).withOpacity(0.88),
         centerTitle: true,
         title: const Text(
           'WELCOME',
@@ -177,50 +235,51 @@ class Homescreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          backgroundColor: const Color.fromARGB(255, 6, 16, 22),
-          type: BottomNavigationBarType.fixed,
-          currentIndex: controller.selectedIndex.value,
-          selectedItemColor: const Color.fromARGB(255, 219, 158, 4),
-          unselectedItemColor: Colors.white,
-          onTap: (index) {
-            controller.changeIndex(index);
-            switch (index) {
-              case 0:
-                // No navigation for Home (already on this screen)
-                break;
-              case 1:
-                Get.toNamed('/wallet');
-                break;
-              case 2:
-                Get.toNamed('/analysis');
-                break;
-              case 3:
-                Get.toNamed('/profile');
-                break;
-            }
-          },
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet),
-              label: 'Wallet',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.analytics),
-              label: 'Analysis',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-        ),
-      ),
+      // bottomNavigationBar: Obx(
+      //   () => BottomNavigationBar(
+      //     backgroundColor:
+      //         const Color.fromARGB(255, 2, 30, 62).withOpacity(0.88),
+      //     type: BottomNavigationBarType.fixed,
+      //     currentIndex: controller.selectedIndex.value,
+      //     selectedItemColor: const Color.fromARGB(255, 219, 158, 4),
+      //     unselectedItemColor: Colors.white,
+      //     onTap: (index) {
+      //       controller.changeIndex(index);
+      //       switch (index) {
+      //         case 0:
+      //           // No navigation for Home (already on this screen)
+      //           break;
+      //         case 1:
+      //           Get.toNamed('/wallet');
+      //           break;
+      //         case 2:
+      //           Get.toNamed('/analysis');
+      //           break;
+      //         case 3:
+      //           Get.toNamed('/profile');
+      //           break;
+      //       }
+      //     },
+      //     items: const [
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.home),
+      //         label: 'Home',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.account_balance_wallet),
+      //         label: 'Wallet',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.analytics),
+      //         label: 'Analysis',
+      //       ),
+      //       BottomNavigationBarItem(
+      //         icon: Icon(Icons.person),
+      //         label: 'Profile',
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
