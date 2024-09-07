@@ -31,7 +31,8 @@ class MainScreen extends StatelessWidget {
       }),
       bottomNavigationBar: Obx(() {
         return BottomNavigationBar(
-          backgroundColor: const Color.fromARGB(255, 6, 16, 22),
+          backgroundColor:
+              const Color.fromARGB(255, 2, 30, 62).withOpacity(0.89),
           type: BottomNavigationBarType.fixed,
           currentIndex: controller.selectedIndex.value,
           selectedItemColor: const Color.fromARGB(255, 219, 158, 4),

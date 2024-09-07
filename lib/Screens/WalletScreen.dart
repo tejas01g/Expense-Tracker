@@ -85,24 +85,41 @@ class WalletScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 25),
             Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: const Color(0xFF2A2A2A),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: const Row(
-                children: [
-                  Icon(Icons.add, color: Colors.yellow),
-                  SizedBox(width: 8),
-                  Text(
-                    'Add your credit / debit card',
-                    style: TextStyle(color: Colors.white),
+                width: 377,
+                height: 320,
+                decoration: ShapeDecoration(
+                    color: const Color.fromARGB(255, 235, 235, 235)
+                        .withOpacity(0.2),
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 1,
+                        color: Colors.white.withOpacity(0.5),
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    )),
+                child: const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.add,
+                        color: Color.fromARGB(255, 223, 166, 10),
+                        size: 23,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        'Add Card',
+                        style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 223, 166, 10)),
+                      )
+                    ],
                   ),
-                ],
-              ),
-            ),
+                )),
           ],
         ),
       ),
