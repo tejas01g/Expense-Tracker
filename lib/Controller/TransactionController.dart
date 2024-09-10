@@ -42,6 +42,27 @@ class TransactionController extends GetxController {
         logo: "assets/amazon_logo.png",
         backgroundColor: const Color(0xFFFFF4E5),
       ),
+      TransactionModel(
+        title: "Flipkart",
+        date: "Aug 3, 2022",
+        amount: -88,
+        logo: "assets/amazon_logo.png",
+        backgroundColor: const Color(0xFFFFF4E5),
+      ),
+      TransactionModel(
+        title: "Swiggy",
+        date: "Aug 7, 2022",
+        amount: -99,
+        logo: "assets/amazon_logo.png",
+        backgroundColor: const Color(0xFFFFF4E5),
+      ),
+      TransactionModel(
+        title: "Zomato",
+        date: "Aug 5, 2022",
+        amount: -81,
+        logo: "assets/amazon_logo.png",
+        backgroundColor: const Color(0xFFFFF4E5),
+      ),
     ];
     transactions.addAll(transactionList);
   }
