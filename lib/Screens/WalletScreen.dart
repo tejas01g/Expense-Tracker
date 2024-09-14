@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 class WalletScreen extends StatelessWidget {
   final WalletController walletController = Get.put(WalletController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,8 +86,8 @@ class WalletScreen extends StatelessWidget {
             ),
             const SizedBox(height: 25),
             Container(
-                width: 377,
-                height: 320,
+                width: 390,
+                height: 299.3,
                 decoration: ShapeDecoration(
                     color: const Color.fromARGB(255, 235, 235, 235)
                         .withOpacity(0.2),
@@ -100,29 +99,38 @@ class WalletScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     )),
                 child: const Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Icon(
-                        Icons.add,
-                        color: Color.fromARGB(255, 223, 166, 10),
-                        size: 23,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        'Add Card',
-                        style: TextStyle(
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 223, 166, 10)),
-                      )
-                    ],
-                  ),
-                )),
+                    padding: EdgeInsets.all(16.0),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: Color.fromARGB(255, 223, 166, 10),
+                            size: 23,
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            'Add Card',
+                            style: TextStyle(
+                                fontSize: 23,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(255, 223, 166, 10)),
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            'Add a new card to your account',
+                            style:
+                                TextStyle(fontSize: 20, color: Colors.black54),
+                          )
+                        ])))
           ],
         ),
       ),
+      // ),
+      // ],
+      // ),
+      // ),
+      // );
     );
   }
 }

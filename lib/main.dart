@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       home: const MainScreen(),
       routes: {
         '/wallet': (context) => WalletScreen(),
-        '/analysis': (context) => const Analysisscreen(),
+        '/analysis': (context) => AnalysisScreen(),
         '/profile': (context) => const Profilescreen(),
       },
       debugShowCheckedModeBanner: false,

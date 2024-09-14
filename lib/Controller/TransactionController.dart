@@ -45,7 +45,7 @@ class TransactionController extends GetxController {
       TransactionModel(
         title: "Flipkart",
         date: "Aug 3, 2022",
-        amount: -88,
+        amount: 90,
         logo: "assets/amazon_logo.png",
         backgroundColor: const Color(0xFFFFF4E5),
       ),
